@@ -19,9 +19,9 @@ class PayrollService:
         """Load employee data from file."""
         try:
             with open(self.filename, "r") as file:
-                data = json.load(file)
+                data = json.load(file)                           # load data as dictionary
                 for emp_id, emp_data in data.items():
-                    self.employees[int(emp_id)] = Employee.from_dict(emp_data)
+                    self.employees[int(emp_id)] = Employee.from_dict(emp_data)       # convert dict to Employee object
         except FileNotFoundError:
             self.employees = {}
         except json.JSONDecodeError:
@@ -64,7 +64,7 @@ class PayrollService:
         emp = self.employees[emp_id]
 
         for key, value in kwargs.items():
-            if hasattr(emp, key) and value is not None:
+            if hasattr(emp, key) and value is not None:                         
                 if key in ["basic_salary", "allowances", "deductions", "bonus"]:
                     setattr(emp, key, float(value))
                 else:

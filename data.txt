@@ -3,7 +3,7 @@
         "emp_id": 101,
         "name": "Lingaraj",
         "department": "IT",
-        "designation": "Developer",
+        "designation": "Python Developer",
         "basic_salary": 50000.0,
         "allowances": 8000.0,
         "deductions": 3000.0,
